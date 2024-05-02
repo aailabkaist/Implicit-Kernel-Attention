@@ -1,0 +1,46 @@
+###### Implementation code for regression task on housing dataset #####
+The code is largely influenced by PyTorch Seq2Seq and GPflow
+https://github.com/bentrevett/pytorch-seq2seq
+
+##### Dependency #####
+python==3.6
+pytorch==1.4.0
+numpy==1.17.4
+scikit-learn==0.22.2
+gpytorch==1.0.0
+
+##### Train and Evaluation #####
+# co2 dataset
+GP with RBF kernel: python3 main_gp.py --kernel_type=rbf --data=co2
+GP with SM kernel: python3 main_gp.py --kernel_type=sm --num_mixture=5 --data=co2
+Transformer: python3 main.py --att_type=dot --ENC_HEADS=8 --data=co2
+IKAN-direct: python3 main.py --att_type=ikandirect --ENC_HEADS=8 --M=64 --p_norm=3.0 --data=co2
+MIKAN: python3 main.py --att_type=mikan --ENC_HEADS=8 --M=64 --p_norm=3.0 --data=co2
+
+# passenger dataset
+GP with RBF kernel: python3 main_gp.py --kernel_type=rbf --data=airline
+GP with SM kernel: python3 main_gp.py --kernel_type=sm --num_mixture=5 --data=airline
+Transformer: python3 main.py --att_type=dot --ENC_HEADS=4 --data=airline
+IKAN-direct: python3 main.py --att_type=ikandirect --ENC_HEADS=8 --M=64 --p_norm=2.0 --data=airline
+MIKAN: python3 main.py --att_type=mikan --ENC_HEADS=8 --M=64 --p_norm=3.0 --data=airline
+
+# housing dataset
+GP with RBF kernel: python3 main_gp.py --kernel_type=rbf --data=housing
+GP with SM kernel: python3 main_gp.py --kernel_type=sm --num_mixture=5 --data=housing
+Transformer: python3 main.py --att_type=dot --ENC_HEADS=4 --data=housing
+IKAN-direct: python3 main.py --att_type=ikandirect --ENC_HEADS=8 --M=64 --p_norm=3.0 --data=housing
+MIKAN: python3 main.py --att_type=mikan --ENC_HEADS=8 --M=64 --p_norm=1.8 --data=housing
+
+# concrete dataset
+GP with RBF kernel: python3 main_gp.py --kernel_type=rbf --data=concrete
+GP with SM kernel: python3 main_gp.py --kernel_type=sm --num_mixture=5 --data=concrete
+Transformer: python3 main.py --att_type=dot --ENC_HEADS=4 --data=concrete
+IKAN-direct: python3 main.py --att_type=ikandirect --ENC_HEADS=8 --M=64 --p_norm=2.0 --data=concrete
+MIKAN: python3 main.py --att_type=mikan --ENC_HEADS=8 --M=64 --p_norm=1.8 --data=concrete
+
+# parkinsons dataset
+GP with RBF kernel: python3 main_gp.py --kernel_type=rbf --data=parkinsons
+GP with SM kernel: python3 main_gp.py --kernel_type=sm --num_mixture=5 --data=parkinsons
+Transformer: python3 main.py --att_type=dot --ENC_HEADS=4 --data=parkinsons
+IKAN-direct: python3 main.py --att_type=ikandirect --ENC_HEADS=8 --M=64 --p_norm=3.0 --data=parkinsons
+MIKAN: python3 main.py --att_type=mikan --ENC_HEADS=8 --M=64 --p_norm=2.0 --data=parkinsons
